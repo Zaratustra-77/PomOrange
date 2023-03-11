@@ -11,7 +11,6 @@ class TestLeftSB(WebDriverSetup):
         header = self.dashboard_page.verify_header_title()
         self.assertEqual(header,'Dashboard')
         for item in self.left_side_bar.menu_list():
-
             if item == 'My Info':
                 self.left_side_bar.click_menu_options(item)
                 header = self.dashboard_page.verify_header_title()
