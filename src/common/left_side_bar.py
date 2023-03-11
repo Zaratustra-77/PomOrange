@@ -8,6 +8,19 @@ class LeftSideBar:
 
     def __init__(self, driver):
         self.driver = driver
+        self.menu_options = {
+            'Admin': LSB.admin_xpath,
+            'PIM': LSB.pim_xpath,
+            'Leave': LSB.leave_xpath,
+            'Time': LSB.time_xpath,
+            'Recruitment': LSB.recruitment_xpath,
+            'My Info': LSB.my_info_xpath,
+            'Performance': LSB.performance_xpath,
+            'Dashboard': LSB.dashboard_xpath,
+            'Directory': LSB.directory_xpath,
+            'Maintenance': LSB.maintenance_xpath,
+            'Buzz': LSB.buzz_xpath
+        }
     # # # # Actions # # # #
 
 
@@ -47,5 +60,9 @@ class LeftSideBar:
     def menu_list(self):
         return LSB.menu_list
 
+    def maintenance_visible(self):
+        visible = WebDriverWait(self.driver,5).until(EC.visibility_of_element_located((By.XPATH,LSB.maintenance_new_window_xpath)))
+        return visible
     def click_menu_options(self,option):
-        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.XPATH, LSB.directory_xpath))).click()
+        locator = self.menu_options[option]
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.XPATH, locator))).click()

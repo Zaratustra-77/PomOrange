@@ -9,6 +9,6 @@ class DashboardPage:
         self.driver = driver
 
     def verify_header_title(self):
-        header_title_text = WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.CLASS_NAME,DashboardLocators.header_title_locator))).get_attribute('textContent')
+        header_title_text = WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.XPATH,DashboardLocators.header_title_locator))).get_attribute('textContent')
 
         return header_title_text
