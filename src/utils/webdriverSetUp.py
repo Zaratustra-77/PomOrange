@@ -15,7 +15,7 @@ class WebDriverSetup(unittest.TestCase):
             chromedriver_path = "C:/Webdriver/chromedriver.exe"
             service = Service(executable_path=chromedriver_path)
             options = Options()
-            options.headless = True
+            options.headless = False
             # options = webdriver.ChromeOptions()
             options.add_argument("--disable-extensions")
             self.driver = webdriver.Chrome(service=service,options=options)
