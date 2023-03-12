@@ -8,7 +8,7 @@ class LoginPage:
 
     def __init__(self, driver):
         self.driver = driver
-
+        self.login_locators = LoginLocators
 
     # # # # Actions # # # #
 
